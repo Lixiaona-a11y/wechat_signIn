@@ -1,0 +1,8 @@
+.picker{
+  background-color: rgba(255,223,191,.2);
+  height: 90rpx;
+  width: 280rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #B0B1B3;
+}

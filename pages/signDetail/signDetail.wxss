@@ -1,0 +1,346 @@
+/* pages/signDetail/signDetail.wxss */
+
+/* <!-- 顶部背景图分区 --> */
+
+.signBg {
+  width: 100%;
+  height: 350rpx;
+}
+
+/* <!-- 签到详情分区 --> */
+
+.detailTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx;
+}
+
+.title {
+  line-height: 70rpx;
+  font-weight: 550;
+}
+
+.share {
+  width: 160rpx;
+  padding: 0;
+  margin-right: 20rpx;
+  border: 1px solid #ff8000;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 6%;
+  color: #ff8000;
+}
+
+.detailMiddle {
+  padding: 40rpx;
+}
+
+.ruleTop {
+  display: flex;
+  justify-content: space-between;
+  height: 70rpx;
+  line-height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.icon-zhizhang8 {
+  font-size: 25px;
+  margin-right: 20rpx;
+}
+
+.icon-bi {
+  margin-right: 20rpx;
+}
+
+.ruleTitle {
+  display: flex;
+}
+
+.ruleEdit navigator {
+  display: flex;
+}
+
+cannotEdit {
+  color: #ccc;
+}
+
+.detailItem {
+  margin-top: 30rpx;
+  display: flex;
+  font-size: 14px;
+}
+
+.ruleName {
+  width: 65rpx;
+  color: #b6b6b6;
+  margin-right: 30rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+}
+
+.date {
+  margin-right: 15rpx;
+}
+
+.date, .time {
+  width: 280rpx;
+}
+
+.erweima {
+  color: #449aef;
+}
+
+/*成员管理分区 */
+
+.manage {
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 100rpx;
+}
+
+.manageLeft {
+  display: flex;
+}
+
+.icon-geren, .icon-bianxie {
+  margin-right: 30rpx;
+}
+
+/* 今日签到分区 */
+
+.todaySign {
+  padding: 0 40rpx;
+  line-height: 100rpx;
+}
+
+.todaySignLeft {
+  display: flex;
+}
+
+.mySign {
+  border: 1px solid #ecedef;
+  padding: 5rpx 20rpx;
+  box-shadow: 5rpx 10rpx 5rpx rgba(221, 221, 221, 0.4);
+}
+
+.sitTitle {
+  border-bottom: 0.5px solid #ecedef;
+}
+
+.Situation {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.myItem {
+  width: 50%;
+  text-align: center;
+  color: #bbb;
+}
+
+.myItem text {
+  font-size: 30px;
+  color: #171717;
+}
+
+.signNum {
+  height: 65rpx;
+}
+
+/* 签到成员分区 */
+
+.signAlreday {
+  margin-top: 80rpx;
+  border-top: 1px solid #ccc;
+  padding: 0 40rpx;
+}
+
+.memberTitle {
+  width: 330rpx;
+  height: 100rpx;
+  background: #fff;
+  margin: -55rpx 0 0 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.memberMess {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+  border-bottom: 0.5px solid #ecedef;
+}
+
+.MessLeft {
+  display: flex;
+}
+
+.memberPic {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 30rpx;
+  margin-right: 75rpx;
+}
+
+.wxName {
+  font-size: 18px;
+}
+
+.memberItem {
+  color: #b7b7b7;
+  margin-bottom: 5rpx;
+  font-size: 14px;
+}
+
+.modify {
+  font-size: 14px;
+  display: flex;
+}
+
+/* 数据加载完毕分区 */
+
+.detailBottom {
+  border-top: 1px solid #adadad;
+  height: 80rpx;
+  margin: 60rpx auto 10rpx;
+  width: 500rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.over {
+  background-color: #fff;
+  margin-top: -25rpx;
+  color: #949494;
+  width: 300rpx;
+  text-align: center;
+}
+
+/* 签到按钮 */
+
+.signIn {
+  width: 400rpx;
+  position: fixed;
+  bottom: 40rpx;
+  left: 50%;
+  margin-left: -200rpx;
+  background: linear-gradient(#ffb973, #ff8000);
+  color: #fff;
+}
+
+.dark {
+  background: linear-gradient(#ccc, #b4b4b4);
+}
+
+/* 签到信息填写覆盖分区 */
+
+.shield {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.info {
+  display: block;
+  width: 80%;
+  margin: 100rpx auto 0;
+  background-color: #fff;
+  padding: 20rpx 40rpx;
+}
+
+.one {
+  position: relative;
+  height: 50rpx;
+}
+
+.infoTile {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.delete_right {
+  position: absolute;
+  right: 0;
+}
+
+.info .text {
+  margin-bottom: 40rpx;
+  color: #b4b4b4;
+  font-size: 14px;
+}
+
+.infoItem {
+  display: flex;
+  background-color: rgba(138, 184, 243, 0.1);
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 30rpx;
+  justify-content: flex-end;
+}
+
+.itemOne {
+  /* border: 1px solid yellow; */
+}
+
+.infoItem input {
+  display: block;
+  height: 80rpx;
+  width: 450rpx;
+  /* border: 1px solid #ccc; */
+}
+
+.remark {
+  height: 300rpx;
+}
+
+.remark .infoItem {
+  width: 20rpx;
+}
+
+.remark textarea {
+  /* background-color: rgba(255, 223, 191, 0.1); */
+  width: 450rpx;
+  height: 300rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  /* border: 1px solid #ccc; */
+}
+
+.submit {
+  background: linear-gradient(#006dd9, #73dcff);
+  color: #fff;
+  width: 60%;
+}
+
+/* 签到成功提示 */
+
+.success {
+  width: 750rpx;
+  height: 500rpx;
+  position: fixed;
+  top: 500rpx;
+}
+
+.closeBadge {
+  background-color: #f25460;
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  top: 900rpx;
+  left: 50%;
+  margin-left: -75rpx;
+}
+
+.none {
+  display: none;
+}

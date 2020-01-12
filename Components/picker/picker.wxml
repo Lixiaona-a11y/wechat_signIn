@@ -1,0 +1,7 @@
+<view class="section">
+  <picker mode="date" bindchange="bindDateChange" value="{{datefromparent}}" custom-item="{{customItem}}" start='{{minDate[0]}}-{{minDate[1]}}-{{minDate[2]}}' end='{{maxDate[0]}}-{{maxDate[1]}}-{{maxDate[2]}}'>
+    <view class="picker">
+      {{datefromparent[0]}}-{{datefromparent[1]}}-{{datefromparent[2]}}
+    </view>
+  </picker>
+</view>

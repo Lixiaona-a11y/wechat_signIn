@@ -1,0 +1,95 @@
+<!--pages/signList/signList.wxml-->
+<!--导航栏分区-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="key" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!--我发起的 分区-->
+<view hidden="{{currentTab!==0}}">
+  <view class="signItem" wx:for="{{postSignMess}}" wx:key="key">
+    <view class="item">
+      <navigator url="../signDetail/signDetail?id={{item.id}}&joinCount={{item.count}}" class="itemTop" wx:key="key">
+        <view class="itemLeft">
+          <text class="title">{{item.title}}</text>
+          <view class="date">
+            <view class="dateStart">{{item.startDate}}</view>
+            <view class="text">至</view>
+            <view class="dateEnd">{{item.endDate=='2100-12-12'?'永久':item.endDate}}</view>
+          </view>
+        </view>
+        <view class="itemRight">
+          <view class="personNum">{{item.count}}</view>
+          <text>人</text>
+        </view>
+      </navigator>
+      <view class="itemBottom">
+        <view class="sponsor">
+          <image class="sponsorPic" src="{{item.signposter.avatar}}" mode="aspectFit"></image>
+          <view class="sponsorMan">{{item.signposter.nickname}}</view>
+          <text>发起</text>
+        </view>
+        <view class="operate">
+          <view class="shares">
+            <view class="iconfont icon-fenxiang"></view>
+            <text>分享</text>
+          </view>
+          <view class="shares" bindtap="deleteSign" data-id="{{item.id}}">
+            <view class="iconfont icon-shanchu"></view>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="divider1"></view>
+  </view>
+  <view wx:if="{{haveRight}}">
+    <view wx:if="{{postMore}}" class="loadmore loading">正在加载...</view>
+    <view wx:else class="loadmore">你已经到达我的底线了</view>
+  </view>
+  <view wx:else class="loadmore"><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">未授权，请前往设置授权</button></view>
+</view>
+
+<!--我参与的 分区-->
+<view hidden="{{currentTab!==1}}">
+  <view class="signItem" wx:for="{{attendSignMess}}" wx:key="key">
+    <view class="item">
+      <navigator url="../signDetail/signDetail?id={{item.id}}&joinCount={{item.count}}" class="itemTop" wx:key="key">
+        <view class="itemLeft">
+          <text class="title">{{item.title}}</text>
+          <view class="date">
+            <view class="dateStart">{{item.startDate}}</view>
+            <view class="text">至</view>
+            <view class="dateEnd">{{item.endDate=='2100-12-12'?'永久':item.endDate}}</view>
+          </view>
+        </view>
+        <view class="itemRight">
+          <view class="personNum">{{item.count}}</view>
+          <text>人</text>
+        </view>
+      </navigator>
+      <view class="itemBottom">
+        <view class="sponsor">
+          <image class="sponsorPic" src="{{item.signposter.avatar}}" mode="aspectFit"></image>
+          <view class="sponsorMan">{{item.signposter.nickname}}</view>
+          <text>发起</text>
+        </view>
+        <view class="operate">
+          <view class="shares">
+            <view class="iconfont icon-fenxiang"></view>
+            <text>分享</text>
+          </view>
+          <view class="shares" bindtap="deleteJoinSign" data-id="{{item.id}}">
+            <view class="iconfont icon-shanchu"></view>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="divider1"></view>
+  </view>
+ <view wx:if="{{haveRight}}">
+    <view wx:if="{{attendMore}}" class="loadmore loading">正在加载...</view>
+    <view wx:else class="loadmore">你已经到达我的底线了</view>
+  </view>
+  <view wx:else class="loadmore"><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">未授权，请前往设置授权</button></view>
+</view>

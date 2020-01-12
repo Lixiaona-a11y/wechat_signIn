@@ -1,0 +1,8 @@
+<!--Components/time/time.wxml-->
+<view class="section">
+  <picker mode="time" bindchange="bindTimeChange" value="" end="{{maxTime[0]}}:{{maxTime[1]}}" start="{{minTime[0]}}:{{minTime[1]}}" custom-item="{{customItem}}">
+    <view class="picker">
+      {{timefromparent[0]}}:{{timefromparent[1]}}
+    </view>
+  </picker>
+</view>

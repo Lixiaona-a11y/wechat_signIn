@@ -1,0 +1,7 @@
+<!--pages/createSuccess/createSuccess.wxml-->
+
+<image class="signPic" src="../../assets/images/sign.gif" mode="aspectFit"></image>
+<text class="signAlert">签到创建成功！</text>
+<text class="needDetail">签到时需要参与者提供个人信息?</text>
+<navigator class="setting" url="../setting/setting?id={{signId}}">去设置</navigator>
+<button class="finish" bindtap="toSignList">完成</button>

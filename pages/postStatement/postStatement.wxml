@@ -1,0 +1,6 @@
+<!--pages/postStatement/postStatement.wxml-->
+<view class="title">每日好句</view>
+<form bindsubmit="postStatement">
+  <textarea placeholder="请输入您要展示的句子（必填,仅限100字）" maxlength="100" name="statement"></textarea>
+  <button form-type="submit" class="submit" open-type="getUserInfo" bindgetuserinfo="getUserInfo">提交</button>
+</form>

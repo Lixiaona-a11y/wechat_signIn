@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/signList/signList",
+    "pages/profile/profile",
+    "pages/createSign/createSign",
+    "pages/createSuccess/createSuccess",
+    "pages/setting/setting",
+    "pages/signDetail/signDetail",
+    "pages/statistics/statistics",
+    "pages/editSign/editSign",
+    "pages/editSuccess/editSuccess",
+    "pages/postStatement/postStatement",
+    "pages/erweima/erweima",
+    "pages/advice/advice"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fdaa30",
+    "navigationBarTitleText": "408签到",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#333",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabs/home.png",
+        "selectedIconPath": "assets/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/signList/signList",
+        "text": "签到",
+        "iconPath": "assets/tabs/calendar.png",
+        "selectedIconPath": "assets/tabs/calendar-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/tabs/profile.png",
+        "selectedIconPath": "assets/tabs/profile-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于签到"
+    }
+  }
+}

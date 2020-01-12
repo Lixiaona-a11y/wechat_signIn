@@ -1,0 +1,18 @@
+<!--pages/profile/profile.wxml-->
+<view class="avatar center">
+  <image src="{{avatar?avatar:'/assets/images/avatar.png'}}"></image>
+  <view class="nickname">{{nickname}}</view>
+</view>
+<view class="divider1"></view>
+<view class="cell1">
+  <navigator url="../advice/advice" class="cell-item1 arrow" bindtap="handleAdvice">
+    <text>意见反馈</text>
+  </navigator>
+  <view class="cell-item1 arrow" bindtap="handleAbout">
+    <text>关于我们</text>
+  </view>
+  <view class="cell-item1 arrow">
+    <text>使用帮助</text>
+  </view>
+  <view class="divider1"></view>
+</view>

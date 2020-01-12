@@ -1,0 +1,121 @@
+/* pages/statistics/statistics.wxss */
+
+page {
+  background-color: #f4f5f7;
+}
+
+/* 导航栏分区 */
+
+.navbar {
+  flex: none;
+  display: flex;
+  background: #fff;
+  color: #464646;
+  border-top: 1px solid #ccc;
+  margin-bottom: 20rpx;
+}
+
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.navbar .item.active {
+  color: #ff8000;
+}
+
+.navbar .item.active:after {
+  width: 150rpx;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  right: 0;
+  margin-left: -75rpx;
+  height: 4rpx;
+  background: #ff8000;
+}
+
+/* 成员列表分区 */
+
+.member {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border: 1px solid #f4f5f7;
+}
+
+.memberItem {
+  display: flex;
+  padding: 20rpx 30rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.memberDetail {
+  margin-right: 50rpx;
+}
+
+.wxName {
+  margin-bottom: 15rpx;
+}
+
+.lastest {
+  font-size: 14px;
+  color: #8d8d8d;
+  margin-bottom: 10rpx;
+}
+
+.joinTime {
+  font-size: 12px;
+  color: #b2b3b5;
+}
+
+.delete {
+  margin-right: 20rpx;
+}
+
+/* 数据加载完毕分区 */
+
+.detailBottom {
+  border-top: 1px solid #adadad;
+  height: 80rpx;
+  margin: 60rpx auto 10rpx;
+  width: 500rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.over {
+  background-color: #f4f5f7;
+  margin-top: -25rpx;
+  color: #949494;
+  width: 300rpx;
+  text-align: center;
+}
+
+/* 签到统计分区 */
+
+.signStatistics {
+  border: 1px solid #e9edf0;
+  width: 80%;
+  height: 60rpx;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  line-height: 60rpx;
+  color: #a9a9a9;
+  margin-bottom: 20rpx;
+  box-shadow: 4rpx 5rpx 5rpx rgb(153,153,153,.3);
+}
+
+.signStatistics text {
+  color: #060606;
+  font-size: 20px;
+}

@@ -1,0 +1,41 @@
+/* pages/editSuccess/editSuccess.wxss */
+
+.signPic {
+  width: 400rpx;
+  height: 250rpx;
+  margin: 100rpx auto;
+  display: block;
+}
+
+.signAlert {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color: #ff8000;
+  margin-bottom: 200rpx;
+}
+
+.needDetail {
+  display: flex;
+  justify-content: center;
+  color: #909090;
+  font-size: 14px;
+  margin-bottom: 30rpx;
+}
+
+.setting {
+  color: #5baac9;
+  display: flex;
+  justify-content: center;
+}
+
+.finish {
+  width: 80%;
+  height: 70rpx;
+  background-color: #fdaa30;
+  line-height: 70rpx;
+  color: #eee;
+  margin-top:150rpx;
+  box-shadow: 5rpx 8rpx 10rpx rgba(255, 229, 153, 1);
+}
+/* pages/editSuccess/editSuccess.wxss */

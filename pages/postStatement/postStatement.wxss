@@ -1,0 +1,30 @@
+/* pages/postStatement/postStatement.wxss */
+
+.title {
+  margin: 30rpx 0 20rpx 40rpx;
+}
+
+form {
+  display: block;
+}
+
+textarea {
+  background-color: #eee;
+  margin: 0 auto;
+  width: 680rpx;
+  color: #b8b9bb;
+  padding: 20rpx 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 50rpx;
+  height: 500rpx;
+  box-sizing: border-box;
+}
+
+.submit{
+  width: 680rpx;
+  margin-top: 80rpx;
+  background-color: #FFA64D;
+  color: #fff;
+  box-shadow: 6rpx 6rpx 10rpx rgba(255,166,77,.5);
+}

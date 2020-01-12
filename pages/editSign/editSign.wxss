@@ -1,0 +1,118 @@
+/* pages/editSign/editSign.wxss */
+
+/* 签到标题分区 */
+
+.title {
+  margin-bottom: 30rpx;
+}
+
+.area {
+  background-color: rgba(255, 223, 191, 0.1);
+  height: 65rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 签到规则分区 */
+
+.signRule .area {
+  width: 100%;
+  height: 250rpx;
+}
+
+.radio-group {
+  margin: 20rpx 10rpx 30rpx;
+}
+
+.radio .radiotwo {
+  margin-left: 40rpx;
+}
+
+.datePicker, .timePicker {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 高级设置分区 */
+
+.advanced .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.operate {
+  width: 100rpx;
+  position: relative;
+}
+
+.open, .close {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.none {
+  display: none;
+}
+
+.islocation {
+  border: 0.5px solid #ecebf0;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25rpx;
+  /* box-shadow: 2rpx 2rpx 5rpx #B8B8B8; */
+}
+
+.chooseLoction {
+  display: flex;
+  border: 1px solid #ecebf0;
+  border-top: 0;
+  height: 120rpx;
+  padding: 0 25rpx;
+  align-items: center;
+}
+
+.chooseLoction .iconfont {
+  font-size: 18px;
+  margin-right: 20rpx;
+}
+
+.setDistance {
+  display: flex;
+  border: 1px solid #ecebf0;
+  border-top: 0;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.distance {
+  display: flex;
+  line-height: 80rpx;
+}
+
+.distance input {
+  border: 1px solid #afafb1;
+  margin-right: 10rpx;
+  height: 80rpx;
+  width: 180rpx;
+  text-align: center;
+}
+.latitude,.longitude{
+  opacity: 0;
+}
+
+/* 提交按钮 */
+
+.submit {
+  background-color: #FF8000;
+  color: #eee;
+}

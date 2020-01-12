@@ -1,0 +1,91 @@
+<!--pages/editSign/editSign.wxml-->
+<form bindsubmit="editSignInfo">
+  <view class="cell">
+    <!-- 签到标题分区 -->
+
+    <view class="signTitle cell-item">
+      <view class="title">签到标题</view>
+      <input class="area" name="title" placeholder="请输入签到标题" value="{{signInfo['title']}}"/>
+    </view>
+
+    <!-- 签到规则分区 -->
+    <view class="signRule cell-item">
+      <view class="title">签到规则</view>
+      <textarea class="area" name="rule" placeholder="请输入签到规则（选填)" value="{{signInfo['rule']}}" adjust-position></textarea>
+
+      <!-- 签到日期分区 -->
+    </view>
+
+    <!-- 签到日期分区 -->
+    <view class="signDate cell-item">
+      <view class="title">签到日期</view>
+      <radio-group class="radio-group" bindchange="radioDateChange">
+        <label class="radio">
+          <radio value="永久"  color="#FF8000" />永久
+          <radio value="自定义" color="#FF8000" class="radiotwo" checked="{{true}}"/>自定义
+        </label>
+      </radio-group>
+      <view class="datePicker {{isDateOpen?'':'none'}}">
+        <picker datefromparent="{{date.date1}}" bind:sendDateToParent="getDateOne" minDate="{{extreDate.start}}" maxDate="{{date.date2}}" name="startDate"></picker>
+        <text style="line-height:100rpx;">至</text>
+        <picker datefromparent="{{date.date2}}" bind:sendDateToParent="getDateTwo" minDate="{{date.date1}}" maxDate="{{extreDate.end}}" name="endDate"></picker>
+      </view>
+    </view>
+
+    <!-- 签到时间分区 -->
+    <view class="signTime cell-item">
+      <view class="title">签到时间</view>
+      <radio-group class="radio-group" bindchange="radioTimeChange">
+        <label class="radio">
+          <radio value="随时" color="#FF8000" />随时
+          <radio value="自定义" color="#FF8000" class="radiotwo" checked="{{true}}"/>自定义
+        </label>
+      </radio-group>
+      <view class="timePicker {{isTimeOpen?'':'none'}}">
+        <time timefromparent="{{time.time1}}" minTime="{{extreTime.start}}" maxTime="{{time.time2}}" bind:sendTimeToParent='getTimeOne' name="startTime"></time>
+        <text style="line-height:100rpx;">至</text>
+        <time timefromparent="{{time.time2}}" minTime="{{time.time1}}" maxTime="{{extreTime.end}}" bind:sendTimeToParent='getTimeTwo' name="endTime"></time>
+      </view>
+    </view>
+
+    <!-- 高级设置分区 -->
+    <view class="advanced cell-item">
+      <view class="title">
+        <text>高级设置</text>
+        <view class="operate">
+          <view class="open {{signInfo['location']||isOpen?'none':''}}" bindtap="changeOpen">
+            <text>展开</text>
+            <view class="arrow-down"></view>
+          </view>
+          <view class="close {{signInfo['location']||isOpen?'':'none'}}" bindtap="changeOpen">
+            <text>收起</text>
+            <view class="arrow-up"></view>
+          </view>
+        </view>
+      </view>
+      <view class="{{signInfo['location']||isOpen?'':'none'}}">
+        <view class="islocation">
+          <text>必须在指定地点才能签到</text>
+          <switch bindchange="switchChange" color="#FF8000" checked="{{signInfo['location']==''?false:true}}"/>
+        </view>
+        <view class="{{signInfo['location']!==''||isLocationOpen?'':'none'}}">
+          <view class="chooseLoction" bindtap="getLocation">
+            <view class="iconfont icon-dingwei"></view>
+            <input class="address" placeholder="请选择签到地点" value="{{address}}" name="location" />
+          </view>
+          <view class="setDistance">
+            <text>设置签到范围</text>
+            <view class="distance">
+              <input placeholder="需≥50m" type="number" value="{{signInfo['distance']}}" name="distance"/>
+              <text>米</text>
+            </view>
+          </view>
+          <input value="{{latitude}}" name="latitude" class="latitude"></input>
+          <input value="{{longitude}}" name="longitude" class="longitude"></input>
+        </view>
+      </view>
+    </view>
+    <!-- 提交按钮 -->
+    <button form-type="submit" class="submit" open-type="getUserInfo" bindgetuserinfo="getUserInfo">提交</button>
+  </view>
+</form>

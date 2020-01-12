@@ -1,0 +1,9 @@
+<!--pages/advice/advice.wxml-->
+<form bindsubmit="goSubmit">
+  <view class="cell-item">
+    <view class="title">反馈意见</view>
+    <textarea class="advice" name="advice" placeholder="请输入您的反馈信息（必填,不超过200字)" adjust-position maxlength="{{200}}" bindinput="showTips"></textarea>
+  </view>
+  <!-- 提交按钮 -->
+  <button form-type="submit" class="submit">提交</button>
+</form>

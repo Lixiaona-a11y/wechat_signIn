@@ -1,0 +1,144 @@
+<!--pages/signDetail/signDetail.wxml-->
+<!-- 顶部背景图分区 -->
+<image class="signBg" mode="aspectFill" src="../../assets/images/bg.jpg"></image>
+
+<!-- 签到详情分区 -->
+<view class="detailTop">
+  <view class="title">{{detail.title}}</view>
+  <button class="share" open-type="share">分享</button>
+</view>
+
+<view class="divider1"></view>
+
+<view class="detailMiddle">
+  <view class="ruleTop">
+    <view class="ruleTitle">
+      <view class="iconfont icon-zhizhang8"></view>
+      <view>签到规则</view>
+    </view>
+    <view class="ruleEdit">
+      <navigator url="{{editUrl}}">
+        <view class="iconfont icon-bi"></view>编辑</navigator>
+    </view>
+  </view>
+  <view class="divider"></view>
+  <view class="ruleDetail">
+    <view class="detailItem">
+      <view class="ruleName">时间</view>
+      <view class="date">
+        {{detail.startDate}}至{{detail.endDate}}
+      </view>
+      <view class="time">
+        每日{{detail.startTime}}至{{detail.endTime}}
+      </view>
+    </view>
+    <view class="detailItem {{detail.location==''?'none':''}}">
+      <view class="ruleName">签到地点</view>
+      <view class="loaction">
+        {{detail.location}} 周边{{detail.distance}}米
+      </view>
+    </view>
+    <view class="detailItem">
+      <view class="ruleName">规则</view>
+      <view class="signRule">{{detail.signRule}}</view>
+    </view>
+    <view class="detailItem">
+      <view class="ruleName">分享</view>
+      <navigator url="../erweima/erweima?code={{path}}" class="erweima">二维码</navigator>
+    </view>
+  </view>
+</view>
+
+<view class="divider1"></view>
+
+<!-- 成员管理分区 -->
+<navigator class="manage" url="../statistics/statistics?signid={{signId}}">
+  <view class="manageLeft">
+    <view class="iconfont icon-geren"></view>
+    <view class="member">成员管理</view>
+  </view>
+  <view class="manageRight arrow">{{detail.joinCount}}人</view>
+</navigator>
+
+<view class="divider"></view>
+
+<!-- 今日签到情况分区 -->
+<view class="todaySign">
+  <view class="todaySignLeft">
+    <view class="iconfont icon-bianxie"></view>
+    <view class="todaySituation">今日签到情况</view>
+  </view>
+  <view class="mySign">
+    <view class="sitTitle">我的签到</view>
+    <view class="Situation">
+      <view class="myItem">
+        <view class="signNum">
+          <text>{{todayTime}}</text>次</view>
+        <view class="signCate">今日签到</view>
+      </view>
+      <view class="myItem">
+        <view class="signNum">
+          <text>{{detail.totalSign}}</text>次</view>
+        <view class="signCate">累计签到</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 签到成员分区 -->
+<view class="signAlreday">
+  <view class="memberTitle">成员签到({{todayDate}})</view>
+  <view class="memberMess" wx:for="{{todaySign}}" wx:key="{{key}}">
+    <view class="MessLeft">
+      <image class="memberPic" src="{{item['join_user']['avatar']}}" mode="aspectFit"></image>
+      <view class="memberDetail">
+        <view class="wxName">{{item['join_user']['nickname']}}</view>
+        <view class="memberItem {{item.name?'':'none'}}">姓名：{{item.name}}</view>
+        <view class="memberItem {{item.gender?'':'none'}}">性别：{{item.gender}}</view>
+        <view class="memberItem {{item.school?'':'none'}}">学校：{{item.school}}</view>
+        <view class="memberItem {{item.phone?'':'none'}}">手机号：{{item.phone}}</view>
+        <view class="memberItem {{item.class_number?'':'none'}}">班级：{{item.class_number}}</view>
+        <view class="memberItem {{item.jobunit?'':'none'}}">单位：{{item.jobunit}}</view>
+        <view class="memberItem {{item.stu_number?'':'none'}}">学号：{{item.stu_number}}</view>
+        <view class="memberItem {{item.work_number?'':'none'}}">员工号：{{item.work_number}}</view>
+        <view class="memberItem {{item.remark?'':'none'}}">备注：{{item.remark}}</view>
+        <view class="memberItem">{{item.create_time}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 数据加载完毕分区 -->
+<view class="detailBottom">
+  <view class="over">数据加载完毕</view>
+</view>
+
+<!-- 签到按钮 -->
+<button class="signIn {{canSigned?'':'dark'}}" disabled="{{!canSigned}}" bindtap="showInfo">签 到</button>
+
+<!-- 签到信息填写覆盖分区 -->
+<view class="shield {{hasShield?'':'none'}}">
+  <form class="info" bindsubmit="closeInfo">
+    <view class="one">
+      <view class="infoTile">签到</view>
+      <view class="delete_right" bindtap="handleClose">X</view>
+    </view>
+    <view class="text">您需要填入以下信息才能完成签到哦！</view>
+    <view wx:for="{{signInfo}}" wx:key="key">
+      <view class="infoItem">
+        <view class="itemOne">{{item[1]}}：</view>
+        <input class="itemTwo" placeholder="请输入{{item[1]}}" name="{{item[0]}}" />
+      </view>
+    </view>
+
+    <view class="infoItem remark ">
+      <view class="itemOne ">备注：</view>
+      <textarea class="area " placeholder="备注（选填) " name="remark" />
+    </view>
+    <button class="submit" form-type="submit">提 交</button>
+  </form>
+</view>
+
+<!-- 签到成功提示 -->
+<image class="success {{hasSuccessBadge?'':'none'}}" src="../../assets/images/success.jpg" mode="aspectFill"></image>
+<view class="closeBadge {{hasSuccessBadge?'':'none'}}" bindtap="closeBadge">关 闭</view>

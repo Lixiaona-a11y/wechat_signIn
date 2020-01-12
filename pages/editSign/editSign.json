@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "picker": "/Components/picker/picker",
+    "time": "/Components/time/time"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "编辑签到",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

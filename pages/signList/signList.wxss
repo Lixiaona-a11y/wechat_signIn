@@ -1,0 +1,116 @@
+/* pages/signList/signList.wxss */
+
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 导航栏分区 */
+
+.navbar {
+  flex: none;
+  display: flex;
+  background: #fdaa30;
+  color: #fff;
+}
+
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.navbar .item.active {
+  /* color: #fff; */
+}
+
+.navbar .item.active:after {
+  width: 150rpx;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  right: 0;
+  margin-left: -75rpx;
+  height: 4rpx;
+  background: #ffff4d;
+}
+
+/* 签到列表分区 */
+
+.item {
+  padding: 40rpx;
+}
+
+.itemTop {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ecebf0;
+}
+
+.title {
+  color: #232323;
+  /* font-weight:500; */
+}
+
+.date {
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  color: #b0b0b0;
+}
+
+.text {
+  margin: 0 20rpx;
+}
+.personNum{
+  color: #fdaa30;
+  font-size: 25px;
+  margin-top: -15rpx;
+  margin-right: 10rpx;
+}
+
+.itemRight {
+  display: flex;
+}
+
+.itemBottom {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #b0b0b0;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.sponsor {
+  display: flex;
+}
+
+.sponsorPic {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.sponsorMan {
+  margin: 0 20rpx;
+}
+
+.operate {
+  display: flex;
+  width: 250rpx;
+  justify-content: space-between;
+}
+
+.operate .shares{
+  display: flex;
+}
+.shares .iconfont{
+  margin-right: 10rpx;
+}
+.shares .icon-shanchu{
+  font-size: 18px;
+}

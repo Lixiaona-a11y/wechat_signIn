@@ -1,0 +1,11 @@
+<!--pages/setting/setting.wxml-->
+<view class="setting">
+  <text class="signTip">请选签到填写信息（仅第一次签到填写，后续展示）</text>
+  <view class="signChoice">
+    <view data-text="{{item.choice}}" data-index="{{index}}" class="choiceItem" wx:for="{{choiceArr}}" wx:key="*this" bindtap="getSelected" style="{{item.checked?'border:0.5px solid #00D900':''}}">
+      <view class="star" style="{{item.checked?'':'display:none'}}">*</view>
+      {{item.choice}}
+    </view>
+    <button class="submit" bindtap="submit">提交</button>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<!-- 首页顶部留言区 -->
+<view class="msgBroad">
+  <view class="msgView">
+    <view class="daily">“每日好句”</view>
+    <view class="sentence">{{sentence.statement}}</view>
+    <view class="user">——来自用户 @{{sentence.nickname}}</view>
+  </view>
+  <navigator url="/pages/postStatement/postStatement" class="postMsg" hover-class="msg_hover">
+    <text>我要发言</text>
+    <view class="number arrow">36014人参与</view>
+  </navigator>
+</view>
+<!-- 首页导航区 -->
+<view class="signNav">
+  <navigator url="/pages/createSign/createSign" class="sign-item">
+    <text class="iconfont icon-bianxie" style="font-size:40px;color:#F65B3D"></text>
+    <text>创建签到</text>
+  </navigator>
+  <navigator class="sign-item" bindtap="scancode">
+    <text class="iconfont icon-huangguan" style="font-size:40px;color:#F65B3D"></text>
+    <text>参与签到</text>
+  </navigator>
+</view>
+<view class="divider"></view>
+<!-- 首页日历分区 -->
+<!-- 
+ * 日历选择组件
+ * selected [Arrey] 那些日期被选中
+ * bindselect [function] 日历是否被打开 
+ * bindgetdate [function] 当前选择的日期
+ * is-open [Boolean} 是否开启插入模式
+  -->
+<!-- <view class='other'>我是其他元素</view> -->
+<view>
+  <view class="signTitle">签到小助手</view>
+  <view class="signAss {{haveSign?'':'dark'}}" bindtap="signIn">
+    签到
+  </view>
+  <calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" bind:clearFromChild="getClearFromChild" />
+</view>

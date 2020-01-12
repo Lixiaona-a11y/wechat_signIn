@@ -1,0 +1,96 @@
+/**index.wxss**/
+
+/* 模块1：首页顶部留言区 */
+
+.msgBroad {
+  background-color: #fdaa30;
+  border-bottom-left-radius: 70%;
+  border-bottom-right-radius: 70%;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+
+.msgView {
+  width: 600rpx;
+  margin: 0 auto 50rpx;
+}
+
+.daily {
+  text-align: center;
+  font-size: 25px;
+  color: rgba(225, 225, 225, 0.5);
+}
+
+.sentence {
+  text-indent: 2em;
+  color: #e4fcff;
+  font-size: 16px;
+}
+
+.user {
+  text-align: right;
+  font-size: 14px;
+  color: rgba(225, 225, 225, 0.7);
+}
+
+.postMsg {
+  margin: 0 auto;
+  height: 100rpx;
+  border-bottom: 2px solid #f2f6ff;
+  width: 600rpx;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0 5rpx 5rpx rgba(0, 0, 0, 0.1) inset;
+  border-radius: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.msg_hover {
+  background-color: #fff;
+}
+
+.postMsg text {
+  color: #2b2a30;
+}
+
+.postMsg .number {
+  color: #c4c4c4;
+}
+/* 首页导航区 */
+.signNav{
+  width: 660rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 70rpx 120rpx;
+  box-sizing: border-box;
+}
+.sign-item{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* 首页日历区 */
+.signTitle{
+  margin: 50rpx 80rpx 30rpx;
+}
+
+.signAss{
+  width: 150rpx;
+  height: 100rpx;
+  margin: auto;
+  background: #FFD900;
+  border-radius: 85rpx / 50rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #f2f6ff;
+  font-size: 18px;
+}
+.dark{
+  background: #c4c4c4;
+}

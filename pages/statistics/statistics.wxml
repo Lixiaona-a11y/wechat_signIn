@@ -1,0 +1,45 @@
+<!--pages/statistics/statistics.wxml-->
+<!--导航栏分区-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="*this" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!-- 成员列表分区 -->
+<view hidden="{{currentTab!==0}}">
+  <view class="member" wx:for="{{member}}" wx:key="*this">
+    <view class="memberItem">
+      <image class="avatar" src="{{item['join_user']['avatar']}}" mode="aspectFit"></image>
+      <view class="memberDetail">
+        <view class="wxName">{{item['join_user']['nickname']}}</view>
+        <view class="lastest">最后签到时间：{{item['latest_time']}}</view>
+        <view class="joinTime">加入时间：{{item['earliest_time']}}</view>
+      </view>
+      <view class="delete">X</view>
+    </view>
+  </view>
+
+  <!-- 数据加载完毕分区 -->
+  <view class="detailBottom">
+    <view class="over">数据加载完毕</view>
+  </view>
+
+  <!-- 签到统计分区 -->
+</view>
+<view hidden="{{currentTab!==1}}">
+  <view class="member" wx:for="{{member}}" wx:key="*this">
+    <view class="memberItem">
+      <image class="avatar" src="{{item['join_user']['avatar']}}" mode="aspectFit"></image>
+      <view class="memberDetail">
+        <view class="wxName">{{item['join_user']['nickname']}}</view>
+        <view class="lastest">最后签到时间：{{item['latest_time']}}</view>
+      </view>
+      <view class="delete">X</view>
+    </view>
+    <view class="signStatistics">
+      <view>累计签到：</view>
+      <view>
+        <text>{{item['totalSign']}}</text>次
+      </view>
+    </view>
+  </view>
+</view>
